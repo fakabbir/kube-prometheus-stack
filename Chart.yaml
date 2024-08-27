@@ -1,0 +1,16 @@
+apiVersion: v2
+appVersion: v0.62.0
+dependencies:
+  - condition: kubeStateMetrics.enabled
+    name: kube-state-metrics
+    repository: https://prometheus-community.github.io/helm-charts
+    version: 4.24.*
+  - condition: nodeExporter.enabled
+    name: prometheus-node-exporter
+    repository: https://prometheus-community.github.io/helm-charts
+    version: 4.8.*
+description: Modified version of kube-prometheus-stack that excludes grafana and has minor updates to crds for argo deployment
+kubeVersion: '>=1.16.0-0'
+name: kube-prometheus-stack
+type: application
+version: 44.2.1
